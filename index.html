@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Proyecto</title>
+    <script src="index.js"></script>
+    <link rel="stylesheet" href="estilos.css" />
+  </head>
+  <body onload="onLoad();">
+    <div id="contenedor">
+      <div id="principal">
+        <h3>Lista de libros</h3>
+        <hr />
+        <input id="eli" type="button" class="boton" value="Eliminar" onclick="Alerta()"/>
+        <input id="can" type="button" class="boton" value="Editar" onclick="Editar()"/>
+        <input type="text" id="edit" value="0" hidden>
+        <div id="tabla">
+
+        </div>
+      </div>
+      <hr id="separador" />
+      <div id="sidebar">
+        <h3>Ingreso de libros</h3>
+        <hr />
+        <form name="frmCaptura">
+          <label>Código</label><br />
+          <input type="text" class="redondeadonorelieve" name="codigo" disabled/><br />
+          <label>Título</label><br />
+          <input type="text" class="redondeadonorelieve" name="titulo" onchange="genCodigo()"/><br />
+          <label>Descripción</label><br />
+          <textarea type="text" class="redondeadonorelieve" name="descripcion"></textarea><br />
+          <label>Fotografía</label><br />
+          <input type="file" id="file" accept="image/*" name="foto" onchange="mostrar()" />
+          <br />
+          <img id="img" width="200" height="200" name="imag" />
+          <br/>
+          <div class="centrado">
+            <input type="button" id="can" class="boton" value="Cancelar" onclick="Cancelar()"/>
+            <input type="button" id="ace" class="boton" value="Agregar" onclick="Aceptar()"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
